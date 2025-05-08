@@ -9,7 +9,7 @@
   <body>
     <?php include '../includes/sidebar.php'; ?>
     <div class="container py-5">
-      <h1 style="color: white;">Cadastro</h1>
+      <h1 style="color: white;">Cadastro de Usuários</h1>
       <form action="createUser.php" method='POST' class="text-white">
         <div class="form mb-3 w-75 pt-3">
           <label for="name" class="form-label">Nome</label>
@@ -24,7 +24,7 @@
           <input type="password" class="form-control " name="password">
         </div>
         <div class="mb-3 ">
-          <input type="submit" class="btn btn-success">
+          <input type="submit" class="btn btn-success" value="Registrar">
         </div>
       </form>
     </div>

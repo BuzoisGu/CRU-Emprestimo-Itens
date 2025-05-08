@@ -51,3 +51,10 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-05-07 19:51:33
+CREATE TABLE item (
+  id_item INT AUTO_INCREMENT PRIMARY KEY,
+  nome_item VARCHAR(255) NOT NULL,
+  descricao_item TEXT,
+  categoria_item VARCHAR(100),
+  data_cadastro_item TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
