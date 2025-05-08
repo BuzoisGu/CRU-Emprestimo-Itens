@@ -21,7 +21,7 @@
         </div>
         <div class="mb-3 w-75">
             <label for="categoria">Categoria</label>
-            <select id="categoria" name="categoria" class="form-control" >
+            <select id="categoria" name="categoria_item" class="form-control" >
                 <option value="" disabled selected>Escolha uma categoria</option>
                 <option value="livro">Livro</option>
                 <option value="ferramenta">Ferramenta</option>
