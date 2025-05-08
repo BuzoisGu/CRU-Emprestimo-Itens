@@ -9,8 +9,9 @@
   <body>
     <?php include '../includes/sidebar.php'; ?>
     <div class="container py-5">
-      <form action="sign_in.php" method='POST' class="text-white">
-        <div class="form mb-3 w-75">
+      <h1 style="color: white;">Cadastro</h1>
+      <form action="createUser.php" method='POST' class="text-white">
+        <div class="form mb-3 w-75 pt-3">
           <label for="name" class="form-label">Nome</label>
           <input type="text" class="form-control" id="nome" name="nome">
         </div>

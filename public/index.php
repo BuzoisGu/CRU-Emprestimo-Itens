@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../config/conexao.php';
+$conexao = connectBanco();
 ?>
 
 <!doctype html>
