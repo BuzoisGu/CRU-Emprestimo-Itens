@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
     body {
       min-height: 100vh;
@@ -26,9 +27,11 @@
 }
     .sidebar a {
       color: white;
-      padding: 15px;  
-      display: block;
       text-decoration: none;
+      padding: 15px;  
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .sidebar a:hover {
       background-color:rgb(255, 255, 255);
@@ -44,13 +47,13 @@
   <div class="sidebar">
     <h4 class="text-white text-center py-3">Empresta+</h4>
     <div class="menus">
-      <a href="#">Início</a>
-      <a href="#">Itens</a>
-      <a href="#">Meus Empréstimos</a>
-      <a href="#">Meu Histórico</a>
-    </div>
-    <div class="sair">
-      <a href="#">Sair</a>
-    </div>
+      <a href="#"><i class="fas fa-home"></i> Início</a>
+      <a href="#"><i class="fas fa-box"></i> Itens</a>
+      <a href="#"><i class="fas fa-book-reader"></i> Meus Empréstimos</a>
+      <a href="#"><i class="fas fa-history"></i> Meu Histórico</a>
+</div>
+<div class="sair">
+  <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+</div>
   </div>
 </body>
