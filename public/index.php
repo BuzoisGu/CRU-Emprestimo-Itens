@@ -15,6 +15,7 @@ $conexao = connectBanco();
   </head>
   <body>
     <?php include 'includes/sidebar.php'; ?>
+    <?php include 'includes/mensagem.php'; ?>
     <div class="container mt-4 py-5">
       <div class="row">
         <div class="col-md-12">

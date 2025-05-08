@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -18,6 +22,10 @@
         <div class="mb-3 w-75">
           <label for="email" class="form-label">Email</label>
           <input type="email" class="form-control" name="email">
+        </div>
+        <div class="mb-3 w-75">
+          <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+          <input type="date" class="form-control" name="data_nascimento">
         </div>
         <div class="mb-3 w-75">
           <label for="password" class="form-label">Senha</label>

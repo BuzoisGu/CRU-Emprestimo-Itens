@@ -53,7 +53,12 @@
       <a href="#"><i class="fas fa-history"></i> Meu Histórico</a>
 </div>
 <div class="sair">
-  <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+  <?php if (isset($_SESSION['username'])): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="user/logout.php">Logout</a>
+          </li>
+  <?php endif; ?>
+  <a href="user/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
 </div>
   </div>
 </body>

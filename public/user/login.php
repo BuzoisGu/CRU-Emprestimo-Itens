@@ -26,11 +26,11 @@
                         <form action="logar.php" method="POST">
                             <div class="mb-3">
                                 <label>Email</label>
-                                <input type="text" name="email" class="form-control">
+                                <input type="text" name="email" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label>Senha</label>
-                                <input type="password" name="senha" class="form-control">
+                                <input type="password" name="senha" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <input type="submit" name="login_btn" class="btn btn-primary" value="Login">
