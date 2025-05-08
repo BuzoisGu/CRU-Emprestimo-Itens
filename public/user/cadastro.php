@@ -17,19 +17,19 @@ session_start();
       <form action="createUser.php" method='POST' class="text-white">
         <div class="form mb-3 w-75 pt-3">
           <label for="name" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="nome" name="nome">
+          <input type="text" class="form-control" id="nome" name="nome" required>
         </div>
         <div class="mb-3 w-75">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" name="email">
+          <input type="email" class="form-control" name="email" required>
         </div>
         <div class="mb-3 w-75">
           <label for="data_nascimento" class="form-label">Data de Nascimento</label>
-          <input type="date" class="form-control" name="data_nascimento">
+          <input type="date" class="form-control" name="data_nascimento" required>
         </div>
         <div class="mb-3 w-75">
           <label for="password" class="form-label">Senha</label>
-          <input type="password" class="form-control " name="password">
+          <input type="password" class="form-control " name="password" required>
         </div>
         <div class="mb-3 ">
           <input type="submit" class="btn btn-success" value="Registrar">
