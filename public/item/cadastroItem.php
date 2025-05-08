@@ -16,12 +16,12 @@
         <input type="text" class="form-control" id="nome" name="nome_item">
     </div>
     <div class="mb-3 w-75">
-        <label for="descricao">Descrição</label><br>
-    <textarea id="descricao" name="descricao_item" rows="3" cols="130" style="border-radius: 10px" ></textarea>
+        <label for="descricao" class="form-label">Descrição</label><br>    
+    <textarea id="descricao" name="descricao_item" rows="3" ></textarea>
     </div>
     <div class="mb-3 w-75">
         <label for="categoria">Categoria</label>
-        <select id="categoria" name="categoria" class="form-control">
+        <select id="categoria" name="categoria" class="form-control" >
             <option value="livro">Livro</option>
             <option value="ferramenta">Ferramenta</option>
             <option value="eletronico">Eletrônico</option>
