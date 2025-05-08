@@ -8,18 +8,19 @@ require '../config/conexao.php';
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Usuarios</title>
+    <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css"
   </head>
   <body>
-    <?php include 'includes/navbar.php'; ?>
-    <div class="container mt-4">
+    <?php include 'includes/sidebar.php'; ?>
+    <div class="container mt-4 py-5">
       <div class="row">
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
               <h4>Lista de Usuários
-                <a href="usuario-create.php" class="btn btn-primary float-end">Adicionar usuário</a>
+                <a href="usuario-create.php" class="btn btn-dark float-end">Adicionar usuário</a>
               </h4>
             </div>
           <div class="card-body">
