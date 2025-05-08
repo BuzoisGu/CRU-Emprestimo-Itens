@@ -21,7 +21,7 @@ $conexao = connectBanco();
           <div class="card">
             <div class="card-header">
               <h4>Lista de Usuários
-                <a href="usuario-create.php" class="btn btn-dark float-end">Adicionar usuário</a>
+                <a href="user/cadastro.php" class="btn btn-dark float-end">Adicionar usuário</a>
               </h4>
             </div>
           <div class="card-body">
