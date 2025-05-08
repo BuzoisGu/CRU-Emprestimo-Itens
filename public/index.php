@@ -32,16 +32,23 @@ $conexao = connectBanco();
                   <th>ID</th>
                   <th>Nome</th>
                   <th>Email</th>
+                  <th>Data de Nascimento</th>
                   <th>Ações</th>
                 </tr>
               </thead>
               <tbody>
+                <?php
+                $sql = "SELECT * FROM usuarios";
+                $usuarios = mysqli_query($conexao, $sql);
+                if (mysqli_num_rows($usuarios) > 0) {
+                  foreach ($usuarios as $usuario) {
+                    ?>
                 <tr>
-                  <td>1</td>
-                  <td>Gustavo</td>
-                  <td>gustavo@gmail.com</td>
-                  <td>
-                    <a href="" class="btn btn-secondary btn-sm">Visualizar</a>
+                  <td><?= $usuario['id'] ?></td>
+                  <td><?= $usuario['nome'] ?></td>
+                  <td><?= $usuario['email'] ?></td>
+                  <td><?= $usuario['data_nascimento'] ?></td>
+                  <td><a href="" class="btn btn-secondary btn-sm">Visualizar</a>
                     <a href="" class="btn btn-success btn-sm">Editar</a>
                     <form action="" method="POST" class="d-inline">
                       <button type="submit" name="delete_usuario" value="1" class="btn btn-danger btn-sm">
@@ -50,6 +57,12 @@ $conexao = connectBanco();
                     </form>
                   </td>
                 </tr>
+                <?php
+                  }
+                } else {
+                  echo "<tr><td colspan='4'>Nenhum usuário encontrado</td></tr>";
+                }
+                ?>
               </tbody>
             </table>
           </div>
