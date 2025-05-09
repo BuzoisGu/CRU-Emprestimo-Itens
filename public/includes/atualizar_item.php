@@ -34,7 +34,7 @@ if (mysqli_num_rows($resultado) > 0) {
       <form action="<?= BASE_URL ?>public/item/updateItem.php" method="POST" class="text-white">
           <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
           <div class="form mb-3 w-75 pt-3">
-            <label for="nome" class="form-label">Novo Nome</label>
+            <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome_item" name="nome_item" value="<?= $item['nome_item'] ?>" >
           </div>
 
@@ -42,6 +42,28 @@ if (mysqli_num_rows($resultado) > 0) {
             <label for="descricao" class="form-label">Descrição</label>
             <textarea class="form-control" id="descricao_item" name="descricao_item" rows="3"><?= $item['descricao_item'] ?></textarea>
           </div>
+
+          <div class="mb-3 w-75">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria_item" class="form-control">
+              <option value="" disabled>Escolha uma categoria</option>
+              <option value="livro" <?= $item['categoria_item'] == 'livro' ? 'selected' : '' ?>>Livro</option>
+              <option value="ferramenta" <?= $item['categoria_item'] == 'ferramenta' ? 'selected' : '' ?>>Ferramenta</option>
+              <option value="eletronico" <?= $item['categoria_item'] == 'eletronico' ? 'selected' : '' ?>>Eletrônico</option>
+              <option value="movel" <?= $item['categoria_item'] == 'movel' ? 'selected' : '' ?>>Móvel</option>
+              <option value="outros" <?= $item['categoria_item'] == 'outros' ? 'selected' : '' ?>>Outros</option>
+            </select>
+          </div>
+
+            <div class="mb-3 w-75">
+            <label for="status">Status</label>
+            <select id="status" name="status_item" class="form-control">
+              <option value="" disabled>---</option>
+              <option value="disponivel" <?= $item['status_item'] == 'disponivel' ? 'selected' : '' ?>>Disponível</option>
+              <option value="emprestado" <?= $item['status_item'] == 'emprestado' ? 'selected' : '' ?>>Emprestado</option>
+            </select>
+          </div>
+          
           <button type="submit" name="atualizar" class="btn btn-primary">Salvar Alterações</button>
           <a href="<?= BASE_URL ?>public/item/itens.php" class="btn btn-secondary ms-2">Cancelar</a>
         </form>

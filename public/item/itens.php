@@ -31,6 +31,7 @@ $resultado = mysqli_query($conexao, $sql);
               <h5 class="card-title"><?= $item['nome_item'] ?></h5>
               <p class="card-text"><?= substr($item['descricao_item'], 0, 100) ?></p>
               <p><strong>Categoria:</strong> <?= $item['categoria_item'] ?></p>
+              <p><strong>Status:</strong> <?= $item['status_item'] ?></p>
 
               <a href="visualizar_item.php?id=<?= $item['id_item'] ?>" class="btn btn-info">Visualizar</a>
 

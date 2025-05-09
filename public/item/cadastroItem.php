@@ -1,9 +1,8 @@
 <?php
-session_start();
+require_once '../../config/auth.php';
 
-// Agora sim você pode acessar $_SESSION
-if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== 'admin') {
-    header('Location: ../index.php');
+if (!isAdmin()) {
+    header('Location: '. BASE_URL .'../index.php');
     exit();
 }
 ?>
@@ -39,6 +38,14 @@ if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== 'admin') {
                 <option value="eletronico">Eletrônico</option>
                 <option value="movel">Móvel</option>
                 <option value="outros">Outros</option>
+            </select>
+        </div>
+        <div class="mb-3 w-75">
+            <label for="status">Status</label>
+            <select id="status" name="status_item" class="form-control" >
+                <option value="" disabled selected>---</option>
+                <option value="disponivel">Disponivel</option>
+                <option value="ferramenta">Emprestado</option>
             </select>
         </div>
         <div class="mb-3 ">

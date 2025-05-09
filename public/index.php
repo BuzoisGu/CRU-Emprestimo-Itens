@@ -21,6 +21,8 @@ if (!isset($_SESSION['username'])) {
     <?php include 'includes/sidebar.php'; ?>
     <div class="container mt-5">
     <h1 class="text-white mb-5">Home</h1>
+    <?php if($_SESSION['tipo'] === 'admin') {?>
+
     <?php include 'includes/mensagem.php'; ?>
       <div class="row">
         <div class="col-md-12">
@@ -76,6 +78,7 @@ if (!isset($_SESSION['username'])) {
           </div>
         </div>
       </div>
+      <?php } ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   </body>
