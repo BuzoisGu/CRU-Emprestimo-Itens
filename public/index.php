@@ -1,7 +1,11 @@
 <?php
 session_start();
-require '../config/conexao.php';
+require __DIR__ . '../../config/conexao.php';
 $conexao = connectBanco();
+
+if (!isset($_SESSION['username'])) {
+    header('Location: ' . BASE_URL . 'public/user/login.php');
+}
 ?>
 
 <!doctype html>

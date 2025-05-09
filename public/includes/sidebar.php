@@ -1,3 +1,6 @@
+<?php
+  include_once __DIR__ . '../../../config/conexao.php';
+?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
     body {
@@ -44,21 +47,22 @@
   </style>
 </head>
 <body>
+  <?php if (isset($_SESSION['username'])): ?>
   <div class="sidebar">
     <h4 class="text-white text-center py-3">Empresta+</h4>
     <div class="menus">
-      <a href="../index.php"><i class="fas fa-home"></i> Início</a>
+      <a <a href="<?= BASE_URL ?>public/"><i class="fas fa-home"></i> Início</a>
       <a href="#"><i class="fas fa-box"></i> Itens</a>
       <a href="#"><i class="fas fa-book-reader"></i> Meus Empréstimos</a>
       <a href="#"><i class="fas fa-history"></i> Meu Histórico</a>
 </div>
 <div class="sair">
   <?php if (isset($_SESSION['username'])): ?>
-          <li class="nav-item">
-            <a class="nav-link" href="user/logout.php">Logout</a>
-          </li>
+    <li class="nav-item">
+      <a href="<?= BASE_URL ?>public/user/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+    </li>
   <?php endif; ?>
-  <a href="user/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
 </div>
   </div>
 </body>
+<?php endif; ?>

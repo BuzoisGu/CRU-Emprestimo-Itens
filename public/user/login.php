@@ -36,6 +36,9 @@ body {
                             <input type="submit" name="login_btn" class="btn btn-primary" value="Login">
                         </div>
                     </form>
+                    <div class="mb-3">
+                        <a href="cadastro.php" class="btn btn-secondary">Cadastrar</a>
+                    </div>
                 </div>
             </div>
         </div>
