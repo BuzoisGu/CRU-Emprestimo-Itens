@@ -8,3 +8,4 @@ if (isset($_SESSION['mensagem'])):
 <?php
     unset($_SESSION['mensagem']);
 endif;
+?>

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -41,7 +42,6 @@ body {
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 </body>
