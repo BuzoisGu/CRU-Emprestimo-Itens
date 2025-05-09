@@ -19,8 +19,11 @@ $resultado = mysqli_query($conexao, $sql);
   <body>
     <?php include_once __DIR__ . '../../includes/sidebar.php';?>
     <div class="container py-5">
+      <?php if($_SESSION['tipo'] === 'admin') {
+      ?>
   <h1 class="text-white m-4">Itens Cadastrados <a href="<?= BASE_URL ?>public/item/cadastroItem.php" class="btn btn-dark float-end px-5 mt-2">Adicionar Item</a>
   </h1>
+  <?php } ?>
   <div class="row">
     <?php while ($item = mysqli_fetch_assoc($resultado)): ?>
       <div class="col-md-4 mb-4" >

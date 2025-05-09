@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = mysqli_query($conexao, $sql);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
+        $_SESSION['id'] = $row['id'];
         $_SESSION['username'] = $row['nome'];
         $_SESSION['tipo'] = $row['tipo'];
         header('Location: ../index.php');

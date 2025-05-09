@@ -51,7 +51,16 @@
   <div class="sidebar">
     <h4 class="text-white text-center py-3">Empresta+</h4>
     <div class="menus">
-      <a <a href="<?= BASE_URL ?>public/"><i class="fas fa-home"></i> Início</a>
+      <?php if($_SESSION['tipo'] === 'admin') { ?>
+      <h6 class="text-white text-center py-3">
+        Bem vindo, Adm!
+      </h6>
+      <?php } else { ?>
+        <h6 class="text-white text-center py-3">
+        Bem vindo, Usuário!
+      </h6>
+      <?php } ?>
+      <a href="<?= BASE_URL ?>public/"><i class="fas fa-home"></i> Início</a>
       <a href="<?= BASE_URL ?>public/item/itens.php"><i class="fas fa-box"></i> Itens</a>
       <a href="#"><i class="fas fa-book-reader"></i> Meus Empréstimos</a>
       <a href="#"><i class="fas fa-history"></i> Meu Histórico</a>

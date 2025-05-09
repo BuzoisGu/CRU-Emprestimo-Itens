@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once __DIR__ . '../../../config/conexao.php';
 $conexao = connectBanco();
 
@@ -10,6 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "UPDATE usuarios SET nome= '$nome', email= '$email', tipo='$tipo' WHERE id = '$id'";
     if (mysqli_query($conexao, $sql)) {
+
+        if (isset($_SESSION['id'])) {
+            $_SESSION['tipo'] = $tipo;
+        }
+
         header('Location: ' . BASE_URL . 'public/index.php');
     } else {
         echo "Erro: " . mysqli_error($conexao);
