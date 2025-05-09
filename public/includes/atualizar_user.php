@@ -43,6 +43,15 @@ if (mysqli_num_rows($resultado) > 0) {
             <input type="email" class="form-control" id="email" name="email" value="<?= $usuario['email'] ?>" >
           </div>
 
+          <div class="mb-3 w-75">
+            <label for="tipo" class="form-label">Tipo de Usuário</label>
+            <select class="form-select" id="tipo" name="tipo" required>
+              <option value="usuario" <?= $usuario['tipo'] === 'usuario' ? 'selected' : '' ?>>Usuário</option>
+              <option value="admin" <?= $usuario['tipo'] === 'admin' ? 'selected' : '' ?>>Administrador</option>
+            </select>
+          </div>
+
+
           <button type="submit" name="atualizar" class="btn btn-primary">Salvar Alterações</button>
           <a href="<?= BASE_URL ?>public/" class="btn btn-secondary ms-2">Cancelar</a>
         </form>

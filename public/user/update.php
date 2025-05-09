@@ -6,8 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
+    $tipo = $_POST['tipo'];
 
-    $sql = "UPDATE usuarios SET nome= '$nome', email= '$email' WHERE id = '$id'";
+    $sql = "UPDATE usuarios SET nome= '$nome', email= '$email', tipo='$tipo' WHERE id = '$id'";
     if (mysqli_query($conexao, $sql)) {
         header('Location: ' . BASE_URL . 'public/index.php');
     } else {
