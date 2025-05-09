@@ -34,8 +34,8 @@ $resultado = mysqli_query($conexao, $sql);
 
             <a href="../includes/atualizar_item.php?id_item=<?= $item['id_item'] ?>" class="btn btn-warning btn-sm">Editar</a>
 
-            <form action="<?= BASE_URL ?>public/item/delete.php" method="POST" class="d-inline">
-          <input type="hidden" name="id" value="<?= $item['id_item'] ?>">
+            <form action="<?= BASE_URL ?>public/item/deleteItem.php" method="POST" class="d-inline">
+          <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
           <button type="submit" name="delete_item" value="1" class="btn btn-danger btn-sm">
             Excluir
           </button>

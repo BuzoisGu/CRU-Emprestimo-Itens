@@ -39,10 +39,9 @@ if (mysqli_num_rows($resultado) > 0) {
           </div>
 
           <div class="mb-3 w-75">
-            <label for="descricao" class="form-label">Descrição</label><br>    
-        <textarea class="form-control" id="descricao_item" name="descricao_item" rows="3" value="<?= $item['descricao_item'] ?>" ></textarea>
-        </div>
-
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea class="form-control" id="descricao_item" name="descricao_item" rows="3"><?= $item['descricao_item'] ?></textarea>
+          </div>
           <button type="submit" name="atualizar" class="btn btn-primary">Salvar Alterações</button>
           <a href="<?= BASE_URL ?>public/item/itens.php" class="btn btn-secondary ms-2">Cancelar</a>
         </form>
