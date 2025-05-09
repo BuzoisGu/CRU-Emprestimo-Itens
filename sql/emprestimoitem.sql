@@ -56,5 +56,6 @@ CREATE TABLE item (
   nome_item VARCHAR(255) NOT NULL,
   descricao_item TEXT,
   categoria_item VARCHAR(100),
+  foto_item VARCHAR(255) NOT NULL,
   data_cadastro_item TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
