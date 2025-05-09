@@ -48,8 +48,9 @@ $resultado = mysqli_query($conexao, $sql);
             <!-- Botão para pegar emprestado -->
               <form action="<?= BASE_URL ?>public/emprestimo/cadastroEmprestimo.php" method="POST" class="d-inline">
                 <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
-                <button type="submit" name="emprestimo_item" value="1" class="btn btn-danger btn-sm">
-                  Empréstimo
+                <button type="submit" name="emprestimo_item" value="1" class="btn btn-danger btn-sm"
+                <?= $item['status_item'] === 'emprestado' ? 'disabled' : '' ?>>
+                <?= $item['status_item'] === 'emprestado' ? 'Indisponível' : 'Empréstimo' ?>
                 </button>
               </form>
             <?php endif; ?>
