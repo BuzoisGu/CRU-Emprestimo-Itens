@@ -53,7 +53,7 @@ if (!isset($_SESSION['username'])) {
                   <td><?= $usuario['nome'] ?></td>
                   <td><?= $usuario['email'] ?></td>
                   <td><?=date('d/m/Y', strtotime($usuario['data_nascimento'])) ?></td>
-                  <td><a href="" class="btn btn-secondary btn-sm">Visualizar</a>
+                  <td><a href="adm/usuario_view.php?id=<?=$usuario['id']?>" class="btn btn-secondary btn-sm">Visualizar</a>
                     <a href="includes/atualizar_user.php?id=<?= $usuario['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
 
                     <form action="<?= BASE_URL ?>public/user/delete.php" method="POST" class="d-inline">
