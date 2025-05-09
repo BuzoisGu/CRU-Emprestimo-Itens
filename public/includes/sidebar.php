@@ -51,7 +51,7 @@
   <div class="sidebar">
     <h4 class="text-white text-center py-3">Empresta+</h4>
     <div class="menus">
-      <?php if($_SESSION['tipo'] === 'admin') { ?>
+      <?php if($_SESSION['tipo'] == 'admin') { ?>
       <h6 class="text-white text-center py-3">
         Bem vindo, Adm!
       </h6>

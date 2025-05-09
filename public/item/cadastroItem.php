@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Agora sim você pode acessar $_SESSION
+if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== 'admin') {
+    header('Location: ../index.php');
+    exit();
+}
+?>
+
+<?php if ($_SESSION['tipo'] === 'admin'): ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -30,10 +41,6 @@
                 <option value="outros">Outros</option>
             </select>
         </div>
-        <!-- <div class="mb-3 w-75">
-            <label for="foto" class="form-label">Escolher uma foto</label>
-            <input class="form-control" type="file" id="formFile" name="foto_item" accept="image/*">
-        </div> -->
         <div class="mb-3 ">
             <input type="submit" class="btn btn-success" value="Cadastrar Item">
         </div>
@@ -42,3 +49,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     </body>
 </html>
+<?php endif; ?>

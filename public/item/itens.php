@@ -19,38 +19,36 @@ $resultado = mysqli_query($conexao, $sql);
   <body>
     <?php include_once __DIR__ . '../../includes/sidebar.php';?>
     <div class="container py-5">
-      <?php if($_SESSION['tipo'] === 'admin') {
-      ?>
-  <h1 class="text-white m-4">Itens Cadastrados <a href="<?= BASE_URL ?>public/item/cadastroItem.php" class="btn btn-dark float-end px-5 mt-2">Adicionar Item</a>
-  </h1>
-  <?php } ?>
-  <div class="row">
-    <?php while ($item = mysqli_fetch_assoc($resultado)): ?>
-      <div class="col-md-4 mb-4" >
-        <div class="card" style="width: 300px height" >
-          <div class="card-body">
-            <h5 class="card-title"><?= $item['nome_item'] ?></h5>
-            <p class="card-text"><?= substr($item['descricao_item'], 0, 100) ?></p>
-            <p><strong>Categoria:</strong> <?= $item['categoria_item'] ?></p>
+    <h1 class="text-white m-4">Itens Cadastrados </h1>
+    <?php if($_SESSION['tipo'] === 'admin') {?>
+        <a href="<?= BASE_URL ?>public/item/cadastroItem.php" class="btn btn-dark float-end px-5 mt-2">Adicionar Item</a>
+    <?php } ?>
+    <div class="row">
+      <?php while ($item = mysqli_fetch_assoc($resultado)): ?>
+        <div class="col-md-4 mb-4" >
+          <div class="card" style="width: 300px height" >
+            <div class="card-body">
+              <h5 class="card-title"><?= $item['nome_item'] ?></h5>
+              <p class="card-text"><?= substr($item['descricao_item'], 0, 100) ?></p>
+              <p><strong>Categoria:</strong> <?= $item['categoria_item'] ?></p>
 
-            <a href="visualizar_item.php?id=<?= $item['id_item'] ?>" class="btn btn-info">Visualizar</a>
+              <a href="visualizar_item.php?id=<?= $item['id_item'] ?>" class="btn btn-info">Visualizar</a>
 
-            <a href="../includes/atualizar_item.php?id_item=<?= $item['id_item'] ?>" class="btn btn-warning btn-sm">Editar</a>
+              <a href="../includes/atualizar_item.php?id_item=<?= $item['id_item'] ?>" class="btn btn-warning btn-sm">Editar</a>
 
-            <form action="<?= BASE_URL ?>public/item/deleteItem.php" method="POST" class="d-inline">
-          <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
-          <button type="submit" name="delete_item" value="1" class="btn btn-danger btn-sm">
-            Excluir
-          </button>
-        </form>
-        
+              <form action="<?= BASE_URL ?>public/item/deleteItem.php" method="POST" class="d-inline">
+            <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
+            <button type="submit" name="delete_item" value="1" class="btn btn-danger btn-sm">
+              Excluir
+            </button>
+          </form>
+            </div>
           </div>
         </div>
-      </div>
-    <?php endwhile; ?>
-  </div>
-</div>
+      <?php endwhile; ?>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-  </body>
+  </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    </body>
 </html>
