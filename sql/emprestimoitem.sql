@@ -28,6 +28,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(100) NOT NULL,
   `data_nascimento` date NOT NULL,
   `senha` varchar(255) DEFAULT NULL,
+  `tipo` varchar(20) NOT NULL DEFAULT 'usuario',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
