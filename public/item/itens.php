@@ -33,16 +33,25 @@ $resultado = mysqli_query($conexao, $sql);
               <p><strong>Categoria:</strong> <?= $item['categoria_item'] ?></p>
               <p><strong>Status:</strong> <?= $item['status_item'] ?></p>
 
+            <?php if ($_SESSION['tipo'] === 'admin'): ?>
               <a href="visualizar_item.php?id=<?= $item['id_item'] ?>" class="btn btn-info">Visualizar</a>
 
               <a href="../includes/atualizar_item.php?id_item=<?= $item['id_item'] ?>" class="btn btn-warning btn-sm">Editar</a>
 
               <form action="<?= BASE_URL ?>public/item/deleteItem.php" method="POST" class="d-inline">
-            <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
-            <button type="submit" name="delete_item" value="1" class="btn btn-danger btn-sm">
-              Excluir
-            </button>
-          </form>
+              <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
+              <button type="submit" name="delete_item" value="1" class="btn btn-danger btn-sm">
+                Excluir
+              </button>
+            </form>
+            <?php endif; ?>
+            <!-- Botão para pegar emprestado -->
+              <form action="<?= BASE_URL ?>public/emprestimo/cadastroEmprestimo.php" method="POST" class="d-inline">
+              <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
+              <button type="submit" name="emprestimo_item" value="1" class="btn btn-danger btn-sm">
+                Empréstimo
+              </button>
+            </form>
             </div>
           </div>
         </div>

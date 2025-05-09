@@ -60,3 +60,16 @@ CREATE TABLE item (
   status_item VARCHAR(100),
   data_cadastro_item TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE emprestimos (
+  id_emprestimo INT AUTO_INCREMENT PRIMARY KEY,
+  id INT NOT NULL,
+  id_item INT NOT NULL,
+  data_emprestimo DATE NOT NULL,
+  prazo_emprestimo DATE NOT NULL,
+  data_devolucao DATE DEFAULT NULL,
+  status_emprestimo ENUM('emprestado', 'devolvido') DEFAULT 'emprestado',
+
+  FOREIGN KEY (id) REFERENCES usuarios(id) ON DELETE CASCADE,
+  FOREIGN KEY (id_item) REFERENCES item(id) ON DELETE CASCADE,
+);
