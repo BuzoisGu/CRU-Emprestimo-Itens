@@ -54,7 +54,8 @@ if (!isset($_SESSION['username'])) {
                   <td><?=date('d/m/Y', strtotime($usuario['data_nascimento'])) ?></td>
                   <td><a href="" class="btn btn-secondary btn-sm">Visualizar</a>
                     <a href="" class="btn btn-success btn-sm">Editar</a>
-                    <form action="" method="POST" class="d-inline">
+                    <form action="<?= BASE_URL ?>public/user/delete.php" method="POST" class="d-inline">
+                      <input type="hidden" name="id" value="<?= $usuario['id'] ?>">
                       <button type="submit" name="delete_usuario" value="1" class="btn btn-danger btn-sm">
                         Excluir
                       </button>
