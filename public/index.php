@@ -97,7 +97,7 @@ if (!isset($_SESSION['username'])) {
               <p><strong>Status:</strong> <?= $item['status_item'] ?></p>
 
             <?php if ($_SESSION['tipo'] === 'admin'): ?>
-              <a href="visualizar_item.php?id=<?= $item['id_item'] ?>" class="btn btn-dark">Visualizar</a>
+              
 
               <a href="../includes/atualizar_item.php?id_item=<?= $item['id_item'] ?>" class="btn btn-warning btn-sm">Editar</a>
 
