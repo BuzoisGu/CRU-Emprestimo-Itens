@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once '../../config/conexao.php';
 $conexao = connectBanco();
 
@@ -15,6 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: ../index.php');
         exit();
     } else {
-        echo '<div class="alert alert-danger">Email ou senha incorretos!</div>';
+        $_SESSION['mensagem'] = 'Email ou senha incorretos!';
+        header('Location: ../user/login.php');
+        exit();
     }
 }

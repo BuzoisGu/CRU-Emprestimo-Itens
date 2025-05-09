@@ -11,18 +11,18 @@ $conexao = connectBanco();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css"
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
     <?php include 'includes/sidebar.php'; ?>
-    <?php include 'includes/mensagem.php'; ?>
     <div class="container mt-4 py-5">
+    <?php include 'includes/mensagem.php'; ?>
       <div class="row">
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
               <h4>Lista de Usuários
-                <a href="user/cadastro.php" class="btn btn-dark float-end">Adicionar usuário</a>
+                <a href="adm/usuario_create.php" class="btn btn-dark float-end">Adicionar usuário</a>
               </h4>
             </div>
           <div class="card-body">
@@ -47,7 +47,7 @@ $conexao = connectBanco();
                   <td><?= $usuario['id'] ?></td>
                   <td><?= $usuario['nome'] ?></td>
                   <td><?= $usuario['email'] ?></td>
-                  <td><?= $usuario['data_nascimento'] ?></td>
+                  <td><?=date('d/m/Y', strtotime($usuario['data_nascimento'])) ?></td>
                   <td><a href="" class="btn btn-secondary btn-sm">Visualizar</a>
                     <a href="" class="btn btn-success btn-sm">Editar</a>
                     <form action="" method="POST" class="d-inline">
