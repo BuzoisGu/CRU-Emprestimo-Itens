@@ -34,7 +34,7 @@ $resultado = mysqli_query($conexao, $sql);
               <p><strong>Status:</strong> <?= $item['status_item'] ?></p>
 
             <?php if ($_SESSION['tipo'] === 'admin'): ?>
-              <a href="visualizar_item.php?id=<?= $item['id_item'] ?>" class="btn btn-info">Visualizar</a>
+              <a href="visualizar_item.php?id=<?= $item['id_item'] ?>" class="btn btn-dark">Visualizar</a>
 
               <a href="../includes/atualizar_item.php?id_item=<?= $item['id_item'] ?>" class="btn btn-warning btn-sm">Editar</a>
 
@@ -44,14 +44,15 @@ $resultado = mysqli_query($conexao, $sql);
                 Excluir
               </button>
             </form>
-            <?php endif; ?>
+            <?php else: ?>
             <!-- Botão para pegar emprestado -->
               <form action="<?= BASE_URL ?>public/emprestimo/cadastroEmprestimo.php" method="POST" class="d-inline">
-              <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
-              <button type="submit" name="emprestimo_item" value="1" class="btn btn-danger btn-sm">
-                Empréstimo
-              </button>
-            </form>
+                <input type="hidden" name="id_item" value="<?= $item['id_item'] ?>">
+                <button type="submit" name="emprestimo_item" value="1" class="btn btn-danger btn-sm">
+                  Empréstimo
+                </button>
+              </form>
+            <?php endif; ?>
             </div>
           </div>
         </div>
