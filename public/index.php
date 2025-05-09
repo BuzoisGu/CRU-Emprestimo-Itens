@@ -19,7 +19,8 @@ if (!isset($_SESSION['username'])) {
   </head>
   <body>
     <?php include 'includes/sidebar.php'; ?>
-    <div class="container mt-4 py-5">
+    <div class="container mt-5">
+    <h1 class="text-white mb-5">Home</h1>
     <?php include 'includes/mensagem.php'; ?>
       <div class="row">
         <div class="col-md-12">

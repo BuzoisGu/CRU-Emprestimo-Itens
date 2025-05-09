@@ -3,18 +3,17 @@ include_once __DIR__ . '../../../config/conexao.php';
 $conexao = connectBanco();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $idItem = $_POST['id_item'];
     $nomeItem = $_POST['nome_item'];
     $descricaoItem = $_POST['descricao_item'];
-    $categoriaItem = $_POST['categoria_item'];
 
-    $sql = "INSERT INTO item (nome_item, descricao_item, categoria_item) VALUES ('$nomeItem', '$descricaoItem', '$categoriaItem')";
+    $sql = "UPDATE item SET nome_item= '$nomeItem', descricao_item= '$descricaoItem' WHERE id_item = '$idItem'";
     if (mysqli_query($conexao, $sql)) {
-        echo "Cadastro de Item realizado com sucesso!";
         header('Location: '. BASE_URL .'public/item/itens.php');
     } else {
         echo "Erro: " . mysqli_error($conexao);
     }
 } else {
-    header('Location: '. BASE_URL .'public/item/cadastroItem.php');
+    header('Location: '. BASE_URL .'public/includes/atualizar_item.php');
     exit();
 }
