@@ -61,8 +61,12 @@
       </h6>
       <?php } ?>
       <a href="<?= BASE_URL ?>public/"><i class="fas fa-home"></i> Início</a>
+      <?php if($_SESSION['tipo'] == 'admin') { ?>
       <a href="<?= BASE_URL ?>public/item/itens.php"><i class="fas fa-box"></i> Itens</a>
+      <?php } ?>
+      <?php if($_SESSION['tipo'] != 'admin') { ?>
       <a href="<?= BASE_URL ?>public/emprestimo/meusEmprestimos.php"><i class="fas fa-book-reader"></i> Meus Empréstimos</a>
+      <?php } ?>
       <a href="#"><i class="fas fa-history"></i> Meu Histórico</a>
 </div>
 <div class="sair">
