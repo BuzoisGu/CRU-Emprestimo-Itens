@@ -1,35 +1,32 @@
-<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="admin/cadastro.php">Cadastro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="dashboard.php">Dashboard</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ms-auto ms-auto mb-2 mb-lg-0">
-        <?php if (isset($_SESSION['username'])): ?>
-          <li class="nav-item">
-            <a class="nav-link" href="admin/logout.php">Logout</a>
-          </li>
-        <?php else: ?>
-          <li class="nav-item">
-            <a class="nav-link" href="admin/login.php">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="register.php">Register</a>
-          </li>
-        <?php endif; ?>
-      </ul>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+</head>
+
+<body>
+    <?php include_once '../admin/navbar.php'; ?>
+    <div class="container py-5">
+        <h2 class="text-center">Atualiza Usuários</h2>
+        <form action="update.php" method="POST">
+            <div class="mb-3 w-25">
+                <label for="id" class="form-label">Id</label>
+                <input type="text" class="form-control" id="id" name="id">
+            </div>
+            <div class="mb-3 w-75">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome">
+            </div>
+            <p><a class="link-offset" href="cadastro.php">Cadastrar</a> | <a class="link-offset" href="deletar.php">Excluir</a></p>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+
     </div>
-  </div>
-</nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+</body>
+
+</html>
