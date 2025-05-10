@@ -67,7 +67,7 @@
       <?php if($_SESSION['tipo'] != 'admin') { ?>
       <a href="<?= BASE_URL ?>public/emprestimo/meusEmprestimos.php"><i class="fas fa-book-reader"></i> Meus Empréstimos</a>
       <?php } ?>
-      <a href="#"><i class="fas fa-history"></i> Meu Histórico</a>
+      <a href="<?= BASE_URL ?>public/user/meu_historico.php"><i class="fas fa-history"></i> Meu Histórico</a>
 </div>
 <div class="sair">
   <?php if (isset($_SESSION['username'])): ?>
